@@ -1,0 +1,155 @@
+.presensi-container {
+  padding: var(--space-6);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.presensi-container h1 {
+  font-size: var(--font-size-3xl);
+  font-weight: 800;
+  color: var(--gray-900);
+  margin-bottom: var(--space-8);
+  text-align: center;
+  background: linear-gradient(135deg, var(--primary-600), var(--success-600));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.summary-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--space-5);
+  margin-bottom: var(--space-8);
+}
+
+.card {
+  padding: var(--space-6);
+  border-radius: var(--radius-xl);
+  background: white;
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--gray-200);
+  text-align: center;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--primary-500);
+  transition: height 0.3s ease;
+}
+
+.card:hover::before {
+  height: 6px;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-xl);
+}
+
+.card.green::before {
+  background: linear-gradient(90deg, var(--success-500), var(--success-600));
+}
+
+.card.yellow::before {
+  background: linear-gradient(90deg, var(--warning-500), var(--warning-600));
+}
+
+.card.gray::before {
+  background: linear-gradient(90deg, var(--gray-500), var(--gray-600));
+}
+
+.card.blue::before {
+  background: linear-gradient(90deg, var(--primary-500), var(--primary-600));
+}
+
+.card h3 {
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  color: var(--gray-600);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: var(--space-3);
+}
+
+.card p {
+  font-size: var(--font-size-3xl);
+  font-weight: 800;
+  color: var(--gray-900);
+  line-height: 1;
+}
+
+.presensi-table {
+  background: white;
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--gray-200);
+  overflow: hidden;
+}
+
+.presensi-table h2 {
+  font-size: var(--font-size-xl);
+  font-weight: 700;
+  color: var(--gray-900);
+  padding: var(--space-6);
+  background: var(--gray-50);
+  border-bottom: 1px solid var(--gray-200);
+  margin: 0;
+}
+
+.presensi-table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.presensi-table th {
+  background: var(--gray-50);
+  padding: var(--space-4) var(--space-6);
+  text-align: left;
+  font-weight: 600;
+  font-size: var(--font-size-sm);
+  color: var(--gray-700);
+  border-bottom: 2px solid var(--gray-200);
+}
+
+.presensi-table td {
+  padding: var(--space-4) var(--space-6);
+  border-bottom: 1px solid var(--gray-100);
+  font-size: var(--font-size-sm);
+  color: var(--gray-700);
+  vertical-align: middle;
+}
+
+.presensi-table tbody tr:hover {
+  background: var(--gray-50);
+}
+
+.presensi-table tbody tr:nth-child(even) {
+  background: rgba(0, 0, 0, 0.02);
+}
+
+.presensi-table tbody tr:nth-child(even):hover {
+  background: var(--gray-50);
+}
+
+@media (max-width: 768px) {
+  .presensi-container {
+    padding: var(--space-4);
+  }
+
+  .summary-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .presensi-table {
+    overflow-x: auto;
+  }
+}

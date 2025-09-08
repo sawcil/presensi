@@ -1,0 +1,20 @@
+{
+"compilerOptions": {
+"strict": true,
+"module": "ESNext",
+"target": "ES2022",
+"jsx": "react-jsx",
+"verbatimModuleSyntax": false,
+"types": [
+"vite/client",
+"vite-plugin-pwa/client",
+
+
+]
+},
+"files": [],
+"references": [
+{ "path": "./tsconfig.app.json" },
+{ "path": "./tsconfig.node.json" }
+]
+}
