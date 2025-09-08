@@ -29,7 +29,7 @@ export default defineConfig(({ mode }) => {
     server: {
       proxy: {
         '/api': {
-          target: env.VITE_API_BASE_URL || 'http://localhost:3001',
+          target: env.VITE_API_BASE_URL || 'https://presensi-production-5e98.up.railway.app/',
           changeOrigin: true,
           secure: false,
         },
